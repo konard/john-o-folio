@@ -3,7 +3,7 @@ import "./style.css";
 // import moon from "./../../img/icons/moon.svg";
 
 import {NavLink} from "react-router-dom";
-import BtnDarkMode from "./../nightmode/BtnDarkMode";
+import BtnDarkMode from "./../btnDarkMode/BtnDarkMode";
 
 const Navbar = () => {
 	
