@@ -1,0 +1,124 @@
+/* Nav */
+
+.nav {
+	padding: 20px 0;
+	background-color: var(--nav-bg);
+	border-bottom: 1px solid var(--nav-border);
+	color: var(--nav-text);
+	letter-spacing: normal;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	transition: all 0.3s ease;
+	backdrop-filter: blur(10px);
+}
+
+.nav--scrolled {
+	background-color: rgba(23, 23, 24, 0.95);
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+	border-bottom-color: var(--accent);
+}
+
+.nav-row {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	column-gap: 30px;
+	row-gap: 20px;
+	flex-wrap: wrap;
+}
+
+.logo {
+	margin-right: auto;
+	color: var(--nav-text);
+	font-size: 24px;
+	font-family: 'Poppins', sans-serif;
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.logo strong {
+	font-weight: 700;
+	background: linear-gradient(135deg, var(--accent), #8b5cf6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.nav-list {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	align-items: center;
+	column-gap: 40px;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+}
+
+.nav-list__link {
+	color: var(--nav-text);
+	transition: all 0.3s ease;
+	position: relative;
+	padding: 5px 0;
+}
+
+.nav-list__link::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: linear-gradient(90deg, var(--accent), #8b5cf6);
+	transition: all 0.3s ease;
+	transform: translateX(-50%);
+}
+
+.nav-list__link:hover::after {
+	width: 100%;
+}
+
+.nav-list__link:hover {
+	color: var(--accent);
+}
+
+.nav-list__link--active {
+	position: relative;
+	color: var(--accent);
+}
+
+.nav-list__link--active::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: block;
+	height: 3px;
+	width: 100%;
+	background: linear-gradient(90deg, var(--accent), #8b5cf6);
+	animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+	from {
+		width: 0;
+		left: 50%;
+	}
+	to {
+		width: 100%;
+		left: 0;
+	}
+}
+
+/* Progress bar */
+.nav-progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: linear-gradient(90deg, var(--accent), #8b5cf6);
+	transform-origin: left;
+	z-index: 1001;
+}

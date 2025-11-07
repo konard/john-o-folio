@@ -1,0 +1,157 @@
+/* Home Page - Technology Stack */
+
+.stack-section {
+    background: linear-gradient(180deg, var(--page-bg) 0%, rgba(92, 98, 236, 0.05) 50%, var(--page-bg) 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.stack-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(92, 98, 236, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(92, 98, 236, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.stack-title {
+    margin-bottom: 80px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    perspective: 1000px;
+}
+
+.stack-card {
+    background: var(--project-card-bg);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: var(--box-shadow);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.stack-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.stack-card:hover::before {
+    opacity: 0.05;
+}
+
+.stack-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0px 20px 60px rgba(92, 98, 236, 0.3);
+}
+
+.stack-card__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stack-card__letter {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+}
+
+.stack-card__title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.stack-card__skills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stack-card__skills li {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background: rgba(92, 98, 236, 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.stack-card__skills li:hover {
+    background: rgba(92, 98, 236, 0.1);
+    transform: translateX(5px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .stack-section {
+        padding: 60px 0;
+    }
+
+    .stack-title {
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+
+    .stack-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .stack-card {
+        padding: 30px 20px;
+    }
+
+    .stack-card__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .stack-card__letter {
+        font-size: 28px;
+    }
+
+    .stack-card__title {
+        font-size: 24px;
+    }
+
+    .stack-card__skills li {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
